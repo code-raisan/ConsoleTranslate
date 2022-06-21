@@ -14,6 +14,7 @@ jobs:
           fetch-depth: 0
       - name: Copy Env
         run: |
+          ls -a
           copy config.go.sample config.go
           copy config.json.sample config.json
       - name: Set up Go

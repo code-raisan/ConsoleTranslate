@@ -20,10 +20,10 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: 1.18
-      - name: Checkout2
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: Git Set
+        run: |
+          git config --global user.name "raisan"
+          git config --global user.email "actions-raisan@ablaze.one"
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v3
         with:

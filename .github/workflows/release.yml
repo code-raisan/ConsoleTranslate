@@ -22,7 +22,9 @@ jobs:
           go-version: 1.18
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           args: release --rm-dist
+      - name: Viwe Data
+        run: |
+          cd dist
+          ls -a

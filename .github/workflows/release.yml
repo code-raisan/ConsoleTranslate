@@ -14,9 +14,8 @@ jobs:
           fetch-depth: 0
       - name: Copy Env
         run: |
-          ls -a
-          copy config.go.sample config.go
-          copy config.json.sample config.json
+          mv config.go.sample config.go
+          mv config.json.sample config.json
       - name: Set up Go
         uses: actions/setup-go@v2
         with:

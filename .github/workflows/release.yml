@@ -23,7 +23,6 @@ jobs:
       - name: go tidy
         run: |
           go mod tidy
-          git commit -m "all"
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v3
         with:

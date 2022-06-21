@@ -23,7 +23,7 @@ jobs:
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v3
         with:
-          args: release --rm-dist
+          args: release --rm-dist --skip-publish
       - name: Viwe Data
         run: |
           cd dist

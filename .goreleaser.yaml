@@ -1,6 +1,8 @@
 before:
   hooks:
     - go mod tidy
+    - git add .
+    - git commit -m "tidy"
 builds:
   - env:
       - CGO_ENABLED=0

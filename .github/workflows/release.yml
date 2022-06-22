@@ -20,7 +20,7 @@ jobs:
         run: |
           mv config.go.sample config.go
           mv config.json.sample config.json
-      - name: Go build
+      - name: Build Go
         run: |
           GOOS=linux GOARCH=amd64 go build -o dist/translate *.go
           GOOS=windows GOARCH=amd64 go build -o dist/translate.exe *.go
@@ -31,5 +31,5 @@ jobs:
           zip ConsoleTranslate_Windows translate.exe README.md LICENSE
       - uses: actions/upload-artifact@v3
         with:
-          name: Upload Binalys
+          name: Binalys
           path: dist/*.zip

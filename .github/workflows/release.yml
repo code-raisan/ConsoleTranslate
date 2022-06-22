@@ -34,3 +34,7 @@ jobs:
         run: |
           cd dist
           ls -a
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Build Binalys
+          path: dist/*.zip

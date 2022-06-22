@@ -6,19 +6,14 @@ builds:
       - windows
       - darwin
     goarch:
-      - 386
       - amd64
+      - arm
       - arm64
-    ignore:
-      - goos: darwin
-        goarch: 386
-      - goos: windows
-        goarch: arm64
+      - 386
+      
 archives:
   - format: zip
-    # アーティファクトのファイル名のテンプレート。
-    # `myproject_darwin_amd64.zip` みたいなファイル名
-    name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
-    wrap_in_directory: true
+  - name_template: "{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+  - wrap_in_directory: false
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
